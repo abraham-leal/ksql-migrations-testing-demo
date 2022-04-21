@@ -1,0 +1,34 @@
+{
+    "outputs": [
+      {
+        "topic": "ORDERS_CACHE_CLEAN",
+        "timestamp": 1650553359014,
+        "key": "1354228",
+        "value": {"ORDERTIME": 1499502824660, "ITEMID": "Item_550", "ORDERUNITS": 8.542786380101072, "ADDRESS_CITY": "City_36", "ADDRESS_STATE": "State_73", "ADDRESS_ZIPCODE": 55335}
+      },
+      {
+        "topic": "ORDERS_CACHE_CLEAN",
+        "timestamp": 1650553361403,
+        "key": "1354233",
+        "value": {"ORDERTIME": 1514101088177, "ITEMID": "Item_261", "ORDERUNITS": 7.369089335460892, "ADDRESS_CITY": "City_35", "ADDRESS_STATE": "State_83", "ADDRESS_ZIPCODE": 95001}
+      },
+      {
+        "topic": "ORDERS_CACHE_CLEAN",
+        "timestamp": 1650553363668,
+        "key": "1354236",
+        "value": {"ORDERTIME": 1498241617865, "ITEMID": "Item_604", "ORDERUNITS": 7.322367104098346, "ADDRESS_CITY": "City_82", "ADDRESS_STATE": "State_53", "ADDRESS_ZIPCODE": 40094}
+      },
+      {
+        "topic": "ORDERS_CACHE_CLEAN",
+        "timestamp": 1650553365493,
+        "key": "1354240",
+        "value": {"ORDERTIME": 1512776114342, "ITEMID": "Item_790", "ORDERUNITS": 6.338581733747479, "ADDRESS_CITY": "City_29", "ADDRESS_STATE": "State_26", "ADDRESS_ZIPCODE": 80572}
+      },
+      {
+        "topic": "ORDERS_CACHE_CLEAN",
+        "timestamp": 1513708846693,
+        "key": "1354237",
+        "value": {"ORDERTIME": 1513708846693, "ITEMID": "Item_943", "ORDERUNITS": 8.617164540976859, "ADDRESS_CITY": "City_46", "ADDRESS_STATE": "State_38", "ADDRESS_ZIPCODE": 15650}
+      }
+    ]
+  }

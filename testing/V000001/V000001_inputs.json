@@ -1,0 +1,34 @@
+{
+    "inputs": [
+      {
+        "topic": "order_flow",
+        "timestamp": 1650553359014,
+        "key": "1354228",
+        "value": {"ORDERTIME": 1499502824660, "ORDERID": 1354228, "ITEMID": "Item_550", "ORDERUNITS": 8.542786380101072, "ADDRESS": {"CITY": "City_36", "STATE": "State_73", "ZIPCODE": 55335}}
+      },
+      {
+        "topic": "order_flow",
+        "timestamp": 1650553361403,
+        "key": "1354233",
+        "value": {"ordertime": 1514101088177, "orderid": 1354233, "itemid": "Item_261", "orderunits": 7.369089335460892, "address": {"city": "City_35", "state": "State_83", "zipcode": 95001}}
+      },
+      {
+        "topic": "order_flow",
+        "timestamp": 1650553363668,
+        "key": "1354236",
+        "value": {"ordertime": 1498241617865, "orderid": 1354236, "itemid": "Item_604", "orderunits": 7.322367104098346, "address": {"city": "City_82", "state": "State_53", "zipcode": 40094}}
+      },
+      {
+        "topic": "order_flow",
+        "timestamp": 1650553365493,
+        "key": "1354240",
+        "value": {"ordertime": 1512776114342, "orderid": 1354240, "itemid": "Item_790", "orderunits": 6.338581733747479, "address": {"city": "City_29", "state": "State_26", "zipcode": 80572}}
+      },
+      {
+        "topic": "order_flow",
+        "timestamp": 1513708846693,
+        "key": "1354237",
+        "value": {"ordertime": 1513708846693, "orderid": 1354237, "itemid": "Item_943", "orderunits": 8.617164540976859, "address": {"city": "City_46", "state": "State_38", "zipcode": 15650}}
+      }
+    ]
+  }

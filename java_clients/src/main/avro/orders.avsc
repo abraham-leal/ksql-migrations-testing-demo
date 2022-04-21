@@ -41,7 +41,13 @@
     },
     {
       "name": "extrafield_evolution",
-      "type": "string"
+      "type": ["null","string"],
+      "default": null
+    },
+    {
+      "name": "evolution_v2",
+      "type": ["null","string"],
+      "default": null
     }
   ],
   "name": "orders",

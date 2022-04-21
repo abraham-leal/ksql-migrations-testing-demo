@@ -14,8 +14,8 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class orders extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 5311675519304057946L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"orders\",\"namespace\":\"ksql\",\"fields\":[{\"name\":\"ordertime\",\"type\":\"long\"},{\"name\":\"orderid\",\"type\":\"int\"},{\"name\":\"itemid\",\"type\":\"string\"},{\"name\":\"orderunits\",\"type\":\"double\"},{\"name\":\"address\",\"type\":{\"type\":\"record\",\"name\":\"address\",\"fields\":[{\"name\":\"city\",\"type\":\"string\"},{\"name\":\"state\",\"type\":\"string\"},{\"name\":\"zipcode\",\"type\":\"long\"}],\"connect.name\":\"ksql.address\"}},{\"name\":\"extrafield_evolution\",\"type\":\"string\"}],\"connect.name\":\"ksql.orders\"}");
+  private static final long serialVersionUID = -2006870620540707262L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"orders\",\"namespace\":\"ksql\",\"fields\":[{\"name\":\"ordertime\",\"type\":\"long\"},{\"name\":\"orderid\",\"type\":\"int\"},{\"name\":\"itemid\",\"type\":\"string\"},{\"name\":\"orderunits\",\"type\":\"double\"},{\"name\":\"address\",\"type\":{\"type\":\"record\",\"name\":\"address\",\"fields\":[{\"name\":\"city\",\"type\":\"string\"},{\"name\":\"state\",\"type\":\"string\"},{\"name\":\"zipcode\",\"type\":\"long\"}],\"connect.name\":\"ksql.address\"}},{\"name\":\"extrafield_evolution\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"evolution_v2\",\"type\":[\"null\",\"string\"],\"default\":null}],\"connect.name\":\"ksql.orders\"}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -77,6 +77,7 @@ public class orders extends org.apache.avro.specific.SpecificRecordBase implemen
   @Deprecated public double orderunits;
   @Deprecated public ksql.address address;
   @Deprecated public java.lang.CharSequence extrafield_evolution;
+  @Deprecated public java.lang.CharSequence evolution_v2;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -93,14 +94,16 @@ public class orders extends org.apache.avro.specific.SpecificRecordBase implemen
    * @param orderunits The new value for orderunits
    * @param address The new value for address
    * @param extrafield_evolution The new value for extrafield_evolution
+   * @param evolution_v2 The new value for evolution_v2
    */
-  public orders(java.lang.Long ordertime, java.lang.Integer orderid, java.lang.CharSequence itemid, java.lang.Double orderunits, ksql.address address, java.lang.CharSequence extrafield_evolution) {
+  public orders(java.lang.Long ordertime, java.lang.Integer orderid, java.lang.CharSequence itemid, java.lang.Double orderunits, ksql.address address, java.lang.CharSequence extrafield_evolution, java.lang.CharSequence evolution_v2) {
     this.ordertime = ordertime;
     this.orderid = orderid;
     this.itemid = itemid;
     this.orderunits = orderunits;
     this.address = address;
     this.extrafield_evolution = extrafield_evolution;
+    this.evolution_v2 = evolution_v2;
   }
 
   public org.apache.avro.specific.SpecificData getSpecificData() { return MODEL$; }
@@ -114,6 +117,7 @@ public class orders extends org.apache.avro.specific.SpecificRecordBase implemen
     case 3: return orderunits;
     case 4: return address;
     case 5: return extrafield_evolution;
+    case 6: return evolution_v2;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -128,6 +132,7 @@ public class orders extends org.apache.avro.specific.SpecificRecordBase implemen
     case 3: orderunits = (java.lang.Double)value$; break;
     case 4: address = (ksql.address)value$; break;
     case 5: extrafield_evolution = (java.lang.CharSequence)value$; break;
+    case 6: evolution_v2 = (java.lang.CharSequence)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -235,6 +240,23 @@ public class orders extends org.apache.avro.specific.SpecificRecordBase implemen
   }
 
   /**
+   * Gets the value of the 'evolution_v2' field.
+   * @return The value of the 'evolution_v2' field.
+   */
+  public java.lang.CharSequence getEvolutionV2() {
+    return evolution_v2;
+  }
+
+
+  /**
+   * Sets the value of the 'evolution_v2' field.
+   * @param value the value to set.
+   */
+  public void setEvolutionV2(java.lang.CharSequence value) {
+    this.evolution_v2 = value;
+  }
+
+  /**
    * Creates a new orders RecordBuilder.
    * @return A new orders RecordBuilder
    */
@@ -282,6 +304,7 @@ public class orders extends org.apache.avro.specific.SpecificRecordBase implemen
     private ksql.address address;
     private ksql.address.Builder addressBuilder;
     private java.lang.CharSequence extrafield_evolution;
+    private java.lang.CharSequence evolution_v2;
 
     /** Creates a new Builder */
     private Builder() {
@@ -321,6 +344,10 @@ public class orders extends org.apache.avro.specific.SpecificRecordBase implemen
         this.extrafield_evolution = data().deepCopy(fields()[5].schema(), other.extrafield_evolution);
         fieldSetFlags()[5] = other.fieldSetFlags()[5];
       }
+      if (isValidValue(fields()[6], other.evolution_v2)) {
+        this.evolution_v2 = data().deepCopy(fields()[6].schema(), other.evolution_v2);
+        fieldSetFlags()[6] = other.fieldSetFlags()[6];
+      }
     }
 
     /**
@@ -353,6 +380,10 @@ public class orders extends org.apache.avro.specific.SpecificRecordBase implemen
       if (isValidValue(fields()[5], other.extrafield_evolution)) {
         this.extrafield_evolution = data().deepCopy(fields()[5].schema(), other.extrafield_evolution);
         fieldSetFlags()[5] = true;
+      }
+      if (isValidValue(fields()[6], other.evolution_v2)) {
+        this.evolution_v2 = data().deepCopy(fields()[6].schema(), other.evolution_v2);
+        fieldSetFlags()[6] = true;
       }
     }
 
@@ -628,6 +659,46 @@ public class orders extends org.apache.avro.specific.SpecificRecordBase implemen
       return this;
     }
 
+    /**
+      * Gets the value of the 'evolution_v2' field.
+      * @return The value.
+      */
+    public java.lang.CharSequence getEvolutionV2() {
+      return evolution_v2;
+    }
+
+
+    /**
+      * Sets the value of the 'evolution_v2' field.
+      * @param value The value of 'evolution_v2'.
+      * @return This builder.
+      */
+    public ksql.orders.Builder setEvolutionV2(java.lang.CharSequence value) {
+      validate(fields()[6], value);
+      this.evolution_v2 = value;
+      fieldSetFlags()[6] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'evolution_v2' field has been set.
+      * @return True if the 'evolution_v2' field has been set, false otherwise.
+      */
+    public boolean hasEvolutionV2() {
+      return fieldSetFlags()[6];
+    }
+
+
+    /**
+      * Clears the value of the 'evolution_v2' field.
+      * @return This builder.
+      */
+    public ksql.orders.Builder clearEvolutionV2() {
+      evolution_v2 = null;
+      fieldSetFlags()[6] = false;
+      return this;
+    }
+
     @Override
     @SuppressWarnings("unchecked")
     public orders build() {
@@ -648,6 +719,7 @@ public class orders extends org.apache.avro.specific.SpecificRecordBase implemen
           record.address = fieldSetFlags()[4] ? this.address : (ksql.address) defaultValue(fields()[4]);
         }
         record.extrafield_evolution = fieldSetFlags()[5] ? this.extrafield_evolution : (java.lang.CharSequence) defaultValue(fields()[5]);
+        record.evolution_v2 = fieldSetFlags()[6] ? this.evolution_v2 : (java.lang.CharSequence) defaultValue(fields()[6]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
@@ -690,7 +762,21 @@ public class orders extends org.apache.avro.specific.SpecificRecordBase implemen
 
     this.address.customEncode(out);
 
-    out.writeString(this.extrafield_evolution);
+    if (this.extrafield_evolution == null) {
+      out.writeIndex(0);
+      out.writeNull();
+    } else {
+      out.writeIndex(1);
+      out.writeString(this.extrafield_evolution);
+    }
+
+    if (this.evolution_v2 == null) {
+      out.writeIndex(0);
+      out.writeNull();
+    } else {
+      out.writeIndex(1);
+      out.writeString(this.evolution_v2);
+    }
 
   }
 
@@ -712,10 +798,22 @@ public class orders extends org.apache.avro.specific.SpecificRecordBase implemen
       }
       this.address.customDecode(in);
 
-      this.extrafield_evolution = in.readString(this.extrafield_evolution instanceof Utf8 ? (Utf8)this.extrafield_evolution : null);
+      if (in.readIndex() != 1) {
+        in.readNull();
+        this.extrafield_evolution = null;
+      } else {
+        this.extrafield_evolution = in.readString(this.extrafield_evolution instanceof Utf8 ? (Utf8)this.extrafield_evolution : null);
+      }
+
+      if (in.readIndex() != 1) {
+        in.readNull();
+        this.evolution_v2 = null;
+      } else {
+        this.evolution_v2 = in.readString(this.evolution_v2 instanceof Utf8 ? (Utf8)this.evolution_v2 : null);
+      }
 
     } else {
-      for (int i = 0; i < 6; i++) {
+      for (int i = 0; i < 7; i++) {
         switch (fieldOrder[i].pos()) {
         case 0:
           this.ordertime = in.readLong();
@@ -741,7 +839,21 @@ public class orders extends org.apache.avro.specific.SpecificRecordBase implemen
           break;
 
         case 5:
-          this.extrafield_evolution = in.readString(this.extrafield_evolution instanceof Utf8 ? (Utf8)this.extrafield_evolution : null);
+          if (in.readIndex() != 1) {
+            in.readNull();
+            this.extrafield_evolution = null;
+          } else {
+            this.extrafield_evolution = in.readString(this.extrafield_evolution instanceof Utf8 ? (Utf8)this.extrafield_evolution : null);
+          }
+          break;
+
+        case 6:
+          if (in.readIndex() != 1) {
+            in.readNull();
+            this.evolution_v2 = null;
+          } else {
+            this.evolution_v2 = in.readString(this.evolution_v2 instanceof Utf8 ? (Utf8)this.evolution_v2 : null);
+          }
           break;
 
         default:
