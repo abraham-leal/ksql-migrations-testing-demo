@@ -1,3 +1,3 @@
-FROM confluentinc/confluentinc/cp-ksqldb-server:7.1.1
+FROM confluentinc/cp-ksqldb-server:7.1.1
 COPY . /build
 WORKDIR /build
