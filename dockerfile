@@ -1,3 +1,3 @@
-FROM confluentinc/cp-ksqldb-server:7.1.1
+FROM confluentinc/ksqldb-cli:0.24.0
 COPY . /build
 WORKDIR /build

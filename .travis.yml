@@ -4,7 +4,7 @@ services:
   - docker
 
 script:
-  - docker pull confluentinc/cp-ksqldb-server:7.1.1
+  - docker pull confluentinc/ksqldb-server:7.1.1
   - docker build -t abraham-leal/ksql-pipeline .
   - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then bash docker run -d abraham-leal/ksql-pipeline /bin/bash -c "ksql-migrations apply -a -c execution/ksql-migrations.properties"; fi'
-  - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then bash docker run -d abraham-leal/ksql-pipeline /bin/bash -c "pwd"; fi'
+  - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then bash docker run -d abraham-leal/ksql-pipeline /bin/bash -c "/build/testing/run_ksql_tests.sh"; fi'
