@@ -6,5 +6,5 @@ services:
 script:
   - docker pull confluentinc/ksqldb-cli:0.24.0
   - docker build -t abraham-leal/ksql-pipeline .
-  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ] && [ "$TRAVIS_BRANCH" = "main" ]; then /bin/bash -c "docker run abraham-leal/ksql-pipeline /bin/bash -c "cd /build; /bin/ksql-migrations apply -c execution/ksql-migrations.properties -a""; fi'
-  - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then /bin/bash -c "docker run abraham-leal/ksql-pipeline /bin/bash -c "/build/testing/run_ksql_tests.sh""; fi'
+  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ] && [ "$TRAVIS_BRANCH" = "main" ]; then docker run abraham-leal/ksql-pipeline /bin/bash "/build/execution/run_ksql_post.sh"; fi'
+  - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then docker run abraham-leal/ksql-pipeline /bin/bash "/build/testing/run_ksql_tests.sh"; fi'
